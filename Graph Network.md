@@ -22,7 +22,7 @@
 
 物理一致性 / 通用性 / 泛化问题：GNN 模型训练于某一结构 /加载 /boundary 条件下，泛化到不同结构 /不同类型激励 /不同耦合条件 (例如连接刚度变化、支撑条件、材料非线性、阻尼等) 时，其预测是否仍能保持物理一致性 (如正确传播路径、相位 / 波速、模态形状, 能量耗散) — 尚缺乏足够公开研究与验证。
 
-1、Graph Network-based Structural Simulator: Graph Neural Networks for Structural Dynamics[[paper](https://arxiv.org/abs/2510.25683?utm_source=chatgpt.com)][code]
+1、Graph Network-based Structural Simulator: Graph Neural Networks for Structural Dynamics[[paper](https://arxiv.org/abs/2510.25683?utm_source=chatgpt.com)][code]  
 图神经网络（GNNs）最近被探索为数值模拟的替代模型。虽然它们在计算流体力学中的应用已被研究，但对结构问题，尤其是动力学案例，关注甚少。为弥补这一空白，我们引入了基于图网络的结构模拟器（GNSS），这是一个用于动态结构问题替代建模的GNN框架。GNSS遵循基于GNN的机器学习模型典型的编码-过程-解码范式，其设计使其特别适合动态仿真，这得益于三个关键特性：（i）在节点固定的局部帧中表达节点运动学，避免有限差分速度下的灾难性抵消;（ii）采用符号感知回归损耗，以减少长距离展开中的相位误差;以及（iii）采用波长知情的连通半径，优化图的构建。我们基于一个涉及50kHz汉宁调制脉冲激发束的案例研究来评估GNSS。结果显示，GNSS能够准确地在数百个时间步中重现问题的物理现象，并推广到未见的负载条件，即现有GNN未能收敛或无法提供有意义的预测。与显式有限元基线相比，GNSS在保持空间和时间真实性的同时实现了显著的推理加速。这些发现表明，具有物理一致性更新规则的保持局域性GNN是动态波支配结构仿真的竞争替代方案。
 2 Machine learning prediction of structural dynamic responses using graph neural networks[[paper](https://www.sciencedirect.com/science/article/pii/S0045794923002183?utm_source=chatgpt.com)][code]
 结构响应的预测对于分析受动力载荷下的结构行为至关重要。现有方法在多方面存在局限。由于需要高强度的劳动时间和专用设备，实验测试成本较高。数值模型在经过适当验证后，能够提供高保真度和劳动高效的冲击测试模拟，但计算成本高昂，这也阻碍了设计办公室中用于密集和大规模仿真的数值方法。数据驱动的机器学习方法也应用于结构响应预测，但它们通常利用直接输入-输出映射方案，预测静态场变量而不捕捉动态响应过程。为弥补这些空白，我们提出了一种基于图神经网络（GNN）的新型机器学习方法，用于全场结构动力学预测。我们的方法采用离散化的结构表示，并采用迭代展开预测方案，因此能够模拟全面的时空结构动力学，充分发挥结构动力学分析的潜力。通过多项基准测试，我们的方法能够准确预测相关场变量，如位移、应变和应力，适用于输入参数范围广的结构，如结构几何形态、冲击速度和位置。还进行了额外的插值和外推测试，以证明我们的方法具有固有的普遍性，即使所有输入都采样在训练分布之外，也能产生令人满意的预测。我们的方法同样高效，运行速度比常用的数值竞争者快一个数量级。作为首次使用GNN进行结构动力学预测且结果令人期待，GNN非常适合有效且高效的动态结构响应预测。
@@ -42,5 +42,22 @@
 在结构分析通过监督学习进行预测领域，神经网络被广泛应用。图神经网络（GNN）的最新进展扩展了其能力，使得利用图表示和GNN的消息传递机制，预测具有多样几何形状的结构。然而，GNN中的传统消息传递与结构性质不一致，导致计算效率低下，且推广到外推数据集的推广有限。为此，提出了一种新颖的结构图表示法，将伪节点作为每个故事中的刚性隔膜结合，并结合一个高效的GNN框架StructGNN。StructGNN 采用了根据结构故事数量身定制的自适应消息传递机制，使输入加载特征能够无缝地在结构图中传输。大量实验验证了该方法的有效性，预测位移、弯曲力矩和剪切力的准确率超过99%。StructGNN在非GNN模型上也表现出强烈的泛化性，在较高且未被看见的结构上平均准确率为96%。这些结果凸显了StructGNN作为可靠且计算高效工具的静态结构响应预测工具的潜力，有望应对结构分析中动态地震载荷相关的挑战。
 
 7 pytorch_geometric [paper][[code](https://github.com/pyg-team/pytorch_geometric?utm_source=chatgpt.com)]  
-提供最基础、广泛使用的 GNN 构建 /训练 /图数据处理 / mesh / point‑cloud 支持。非常适合作为基础库，从零开始构建结构‑动力学 /振动传播模型 (例如将 mesh → graph, 自定义 message‑passing / edge features / time‑stepping) 时使用。
-[paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code]
+提供最基础、广泛使用的 GNN 构建 /训练 /图数据处理 / mesh / point‑cloud 支持。非常适合作为基础库，从零开始构建结构‑动力学 /振动传播模型 (例如将 mesh → graph, 自定义 message‑passing / edge features / time‑stepping) 时使用。  
+
+8 Machine learning prediction of structural dynamic responses using graph neural networks[[paper](https://www.sciencedirect.com/science/article/pii/S0045794923002183?utm_source=chatgpt.com)][code]  
+结构响应的预测对于分析受动力载荷影响的结构行为至关重要。现有的方法在不同方面都有局限。由于需要高强度的劳动时间和专用设备，实验测试成本较高。数值模型在经过适当验证后可以提供高保真度和劳动效率的冲击测试模拟，但其计算成本高昂，这限制了设计办公室中用于密集和大规模模拟的数值方法。数据驱动机器学习方法也应用于结构响应预测，但通常利用直接输入输出映射方案，预测静态场变量而不捕捉动态响应过程。为弥补这些空白，我们提出了一种基于图神经网络（GNN）的新型机器学习方法，用于全场结构动力学预测。我们的方法采用结构的离散表示，并采用迭代展开预测方案，因此能够模拟全面的时空结构动力学，充分发挥结构动力学分析的潜力。通过多项基准测试，我们的方法证明能够准确预测相关场变量，如位移、应变和应力，适用于输入参数范围广泛的结构，如结构几何形状、冲击速度和位置。还进行了额外的插值和外推测试，以证明我们的方法具有固有的普遍性，即使所有输入都被抽样在训练分布之外，也能产生令人满意的预测。我们的方法同样高效，运行速度比常用的数值竞争者快一个数量级。由于首次尝试使用GNN进行结构动力学预测且结果令人满意，人们认为GNN非常适合有效且高效的动态结构响应预测。
+
+9 Using graph neural networks and frequency domain data for automated operational modal analysis of populations of structures[[paper](https://www.cambridge.org/core/journals/data-centric-engineering/article/using-graph-neural-networks-and-frequency-domain-data-for-automated-operational-modal-analysis-of-populations-of-structures/5834E459A2DBFE3F881EE88645BF0EA3?utm_source=chatgpt.com)][code]
+
+
+
+10 Structural damage detection framework based on graph convolutional network directly using vibration data[[paper](https://www.sciencedirect.com/science/article/pii/S2352012422000662?utm_source=chatgpt.com)][code]  
+本研究开发了一个新颖、高精度且稳健的框架，称为g-SDDL，用于结构损伤检测（SDD），直接利用振动数据，无需手工设计特征。传统的结构健康监测方法需要先进技术和领域专业知识来预处理振动信号以获得高精度结果，但这可能影响实时监测任务的执行。因此，直接利用振动数据是开辟这一雄心勃勃目标新路径的研究方向之一，这也是本研究的核心主题。为了有效利用振动数据，可以利用图神经网络捕捉传感器位置的固有空间相关性，并利用卷积作提取底层振动信号模式。此外，多个g-SDDL模型可以叠加，以应对多重损坏场景。该方法的可行性通过三个案例研究定量验证，复杂度逐渐增加，从一维连续混凝土梁到二维框架结构，再到文献中的实验数据库。即使在多伤害场景中，也始终保持超过90%的高伤害检测准确率。此外，通过比较、噪声注入和参数研究，研究了g-SDDL的性能和鲁棒性。
+
+11 A Computational Framework for Modeling Complex Sensor Network Data Using Graph Signal Processing and Graph Neural Networks in Structural Health Monitoring[[paper](https://arxiv.org/abs/2105.05316?utm_source=chatgpt.com)][code]  
+复杂网络适合建模多维数据，如关系型和/或时间型数据。特别是在需要形式化如此复杂数据及其内在关系时，复杂的网络建模及其生成的图表示方式提供了多种强大的解决方案。本文聚焦于结构健康监测图表上的具体机器学习方法，从分析和预测（维护）视角出发。具体来说，我们提出了一个基于复杂网络建模的框架，整合了图信号处理（GSP）和图神经网络（GNN）方法。我们在针对性的结构健康监测（SHM）应用领域中展示了该框架。我们特别关注一个显著的现实结构健康监测应用场景，即对荷兰一座大型桥梁的传感器数据（应变、振动）进行建模和分析。在我们的实验中，我们表明GSP能够识别最重要的传感器，因此我们研究了一套搜索和优化方法。此外，GSP能够检测特定的图信号模式（模态形状），捕捉复杂网络中传感器的物理功能特性。此外，我们还展示了在这类数据中应用GNN进行应变预测的有效性。
+
+12 Graph Neural Network Assisted Genetic Algorithm for Structural Dynamic Response and Parameter Optimization[[paper](https://arxiv.org/abs/2510.22839?utm_source=chatgpt.com)][code]  
+结构参数的优化，如质量（m）、刚度（k）和阻尼系数（c），对于设计高效、韧性和稳定结构至关重要。传统的数值方法，包括有限元法（FEM）和计算流体力学（CFD）仿真，能提供高保真度的结果，但对于迭代优化任务来说计算成本较高，因为每次评估都需要解每个参数组合的控制方程。本研究提出了一个混合数据驱动框架，将图神经网络（GNN）替代模型与遗传算法（GA）优化器整合，以克服这些挑战。GNN经过训练，能够准确学习结构参数与动态位移响应之间的非线性映射，从而实现快速预测，无需反复求解系统方程。利用Newmark Beta方法生成了涵盖不同质量、刚度和阻尼配置的单自由度（SDOF）系统响应数据集。GA随后通过最小化预测位移和增强动态稳定性，寻找全局最优参数集。结果表明，GNN和GA框架实现了强收敛性、稳健的泛化能力，并且相比传统仿真显著降低了计算成本。这种方法凸显了将机器学习替代工具与进化优化相结合，实现自动化和智能结构设计的有效性。
+
+[paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code]
