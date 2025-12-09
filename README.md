@@ -19,4 +19,16 @@
 3、Adversarial Multiple-Target Domain Adaptation for Fault Classification [[paper](https://ieeexplore.ieee.org/abstract/document/9141312)][[code](https://github.com/mohamedr002/AMDA?tab=readme-ov-file)]  
 提出了一种针对单一来源多目标（1SmT）场景的新型对抗性多靶域DA（AMDA）方法，该模型可以同时推广到多目标域。对抗适应技术应用于将多目标域特征转换为与单一来源域特征不变。
 
+4 Integrating Expert Knowledge with Domain Adaptation for Unsupervised Fault Diagnosis[[papers](https://ieeexplore.ieee.org/document/9612159)][[code](https://github.com/qinenergy/syn2real)]  
+将专家知识与领域适配整合以实现无监督故障诊断  
+5 Unsupervised Cross-domain Fault Diagnosis Using Feature Representation Alignment Networks for Rotating Machinery[[papers](https://ieeexplore.ieee.org/document/9301443)][[code](https://github.com/JiahongChen/FRAN)]  
+通过对齐从两个数据域提取的特征，来减轻从实验平台（源域）和作平台（目标域）收集的数据之间的域位移。最大化目标特征空间与整个特征空间之间的互信息，以提升标注数据在源域中的知识可转移性。此外，两个域之间的特征级差异被最小化，以进一步提高诊断准确性。
 
+6 Interpretable Physics-informed Domain Adaptation Paradigm for Cross-machine Transfer Diagnosis[[papers](https://www.sciencedirect.com/science/article/abs/pii/S0950705124001345?via%3Dihub)][[code](https://github.com/liguge/WIDAN?tab=readme-ov-file)]  
+尽管基于迁移学习的智能诊断取得了显著突破，但鉴于不同机器源域与目标域数据分布差异日益显著，现有知名方法的性能仍需紧迫提升。为了解决这个问题，我们没有设计域差异的统计指标或复杂的网络架构，而是深入探讨信号处理与域适应之间的相互作用与相互促进。受小波技术和权重初始化的启发，巧妙地设计出端到端、简洁且高性能的物理知情小波域适应网络（WIDAN），将可解释的小波知识集成到带有独立权重的双流卷积层中，以应对极具挑战性的跨机诊断任务。具体来说，CNN的第一层权重会被更新为优化且信息丰富的拉普拉斯权重或莫莱权重。这种方法缓解了参数选择的麻烦，因为具有特定物理解释的缩放和平移因子受卷积核参数的限制。此外，引入了平滑辅助的缩放因子，以确保与神经网络权重的一致性。此外，双流瓶颈层设计用于学习合理权重，预先将不同领域数据转换成统一的公共空间。这可以促进WIDAN提取域不变特征。
+[papers][code]
+
+[papers][code]
+
+
+[papers][code]
