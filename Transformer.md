@@ -1,5 +1,5 @@
 # Transformer
-1 Kolmogorov-Arnold Transformer[papers][https://github.com/Adamdad/kat?tab=readme-ov-file]  
+1 Kolmogorov-Arnold Transformer[[papers](https://arxiv.org/abs/2409.10594)][[code](https://github.com/Adamdad/kat?tab=readme-ov-file)]  
  Transformer是深度学习的基石。传统上，这些模型依赖多层感知器（MLP）层来在信道间混合信息。本文介绍了 Kolmogorov-Arnold 变换器（KAT），
 这是一种新颖架构，用 Kolmogorov-Arnold 网络（KAN）层取代 MLP 层，以提升模型的表现力和性能。然而，将 KAN 集成到变换器中并非易事，尤其是在放大时。
 具体来说，我们识别出三个关键挑战：（C1） 基础函数。KAN 中使用的标准 B 样条函数未针对现代硬件上的并行计算进行优化，导致推理速度较慢。（C2）参数与计算效率低下。
