@@ -17,7 +17,7 @@
 2、Transfer Learning Library for Fault Diagnosis[[code](https://github.com/Feaxure-fresh/TL-Fault-Diagnosis-Library)]  
 单源无监督域适应、多源无监督域适应和域脑化。  
 3、Adversarial Multiple-Target Domain Adaptation for Fault Classification [[paper](https://ieeexplore.ieee.org/abstract/document/9141312)][[code](https://github.com/mohamedr002/AMDA?tab=readme-ov-file)]  
-提出了一种针对单一来源多目标（1SmT）场景的新型对抗性多靶域DA（AMDA）方法，该模型可以同时推广到多目标域。对抗适应技术应用于将多目标域特征转换为与单一来源域特征不变。
+数据驱动的故障分类方法正受到广泛关注，因为它们可以应用于许多实际应用。然而，它们假设训练数据和测试数据来自同一分布。实际场景的作条件各异，导致域移问题显著降低诊断性能。最近，领域适应（DA）被探索，通过将知识从有标签源域（如源工作状态）转移到无标记目标域（如目标工作条件）来解决域转移问题。然而，所有现有方法都在单源单目标（1S1T）条件下运行。因此，每个新的目标域都需要训练一个新的模型。这显示出在处理多种工作条件时的可扩展性有限，因为不同模型应针对不同的目标工作条件进行训练，这显然在实际中并非可行的解决方案。为解决该问题，我们提出了一种针对单源多靶（1SmT）场景的新型对抗性多靶域DA（AMDA）方法，该模型可以同时推广到多靶域。对抗性适应被应用来将多目标域特征转换为与单一源域特征不变。这带来了一个具有可扩展性、能够推广到多靶域的新颖能力的模型。在两个公开数据集和一个自收集数据集上的大量实验表明，所提方法始终优于最先进的方法。  
 
 4 Integrating Expert Knowledge with Domain Adaptation for Unsupervised Fault Diagnosis[[papers](https://ieeexplore.ieee.org/document/9612159)][[code](https://github.com/qinenergy/syn2real)]  
 将专家知识与领域适配整合以实现无监督故障诊断  
