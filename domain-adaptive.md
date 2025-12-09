@@ -13,7 +13,7 @@
 
 ## Fault diagnosis
 1、A Domain Adaptation Neural Network for Digital Twin-Supported Fault Diagnosis[[code](https://github.com/JialingRichard/Digital-Twin-Fault-Diagnosis)][[paper](https://arxiv.org/abs/2505.21046)]  
-基于领域对抗神经网络（DANN）的故障诊断框架，实现了从模拟（源域）向现实世界（目标领域）数据的知识传输。我们利用一个公开的机器人故障诊断数据集评估该框架.DANN方法与常用的轻量级深度学习模型如CNN、TCN、Transformer和LSTM进行了比较。  
+数字孪生通过生成模拟数据用于模型训练，为深度学习故障诊断中缺乏足够标记数据提供了有前景的解决方案。然而，仿真与现实系统之间的差异可能导致模型在实际场景中应用时性能显著下降。为解决这一问题，我们提出了基于领域对抗神经网络（DANN）的故障诊断框架，实现了从模拟（源域）向现实世界（目标领域）数据的知识传输。我们利用一个公开的机器人故障诊断数据集评估该框架，该数据集包含3600条由数字孪生模型生成的序列和90条从物理系统收集的真实序列。DANN方法与常用的轻量级深度学习模型如CNN、TCN、Transformer和LSTM进行了比较。实验结果表明，纳入结构域适应显著提升了诊断性能。例如，将DANN应用于基线CNN模型，其在真实世界测试数据上的准确率从70.00%提升到80.22%，展示了领域适应在弥合模拟与现实差距中的有效性。    
 2、Transfer Learning Library for Fault Diagnosis[[code](https://github.com/Feaxure-fresh/TL-Fault-Diagnosis-Library)]  
 单源无监督域适应、多源无监督域适应和域脑化。  
 3、Adversarial Multiple-Target Domain Adaptation for Fault Classification [[paper](https://ieeexplore.ieee.org/abstract/document/9141312)][[code](https://github.com/mohamedr002/AMDA?tab=readme-ov-file)]  
