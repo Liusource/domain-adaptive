@@ -29,7 +29,7 @@
 7 Both Reliable and Unreliable Predictions Matter: Domain Adaptation for Bearing Fault Diagnosis without Source Data[[papers](https://www.sciencedirect.com/science/article/abs/pii/S0925231225023331)][[code](https://github.com/BdLab405/SDALR?tab=readme-ov-file)]  
 然而，现有方法并不理想，因为它们仅仅利用了自信地伪标记的目标样本，同时忽视了特征空间的内在结构特征。此外，故障伪标签的可靠性总是以熵估计，其准确性可以通过更复杂的策略提升。为解决这些问题，我们计划探讨目标域中特征与伪标签之间的相关性，以维持特征辨别性与特征多样性之间的平衡。此外，我们还开发了一种基于投票的策略，结合数据增强，以更准确地估计故障伪标签的可靠性。该方法能够通过自监督训练和分布结构发现，分别利用可靠样本和不可靠样本进行诊断模型转移。
 
-[papers][code]
+8、Intelligent Ball Screw Fault Diagnosis Using Deep Learning Based Domain Adaptation and Transfer Learning[papers][[code](https://github.com/Fabian0597/MMD_PHMS)]
 
 
 [papers][code]
