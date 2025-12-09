@@ -32,15 +32,15 @@
 3 Using Graph Neural Networks and Frequency Domain Data for Automated Operational Modal Analysis of Populations of Structures[[paper](https://arxiv.org/abs/2407.06492?utm_source=chatgpt.com)][code]  
 基于人口结构健康监测（PBSHM）范式最近被提出，作为一种有前景的方法，通过促进具有一定相似性的结构之间的迁移学习，增强工程结构的数据驱动评估。在本研究中，我们将这一概念应用于结构系统的自动模态识别。我们引入基于图神经网络（GNN）的深度学习方案，基于空间稀疏振动测量的功率谱密度（PSD），识别工程结构的模态属性，包括固有频率、阻尼比和模态形状。通过系统数值实验评估所提出的模型，采用两种具有相似拓扑特征但几何（尺寸、形状）和材料（刚度）特性不同的桁架群。结果表明，一旦训练完成，基于GNN的模型即使在存在测量噪声和稀疏测量位置的情况下，也能以良好的效率和可接受的准确度识别同一结构群体内未见结构的模态属性。基于GNN的模型在识别速度方面相比经典频域分解（FDD）方法具有优势，同时在识别精度方面也优于其他多层感知器（MLP）架构，使其成为PBSHM应用中极具前景的工具。
 
-4 A review of graph neural network applications in mechanics-related domains[[paper](https://link.springer.com/article/10.1007/s10462-024-10931-y?utm_source=chatgpt.com)][code]
+4 A review of graph neural network applications in mechanics-related domains[[paper](https://link.springer.com/article/10.1007/s10462-024-10931-y?utm_source=chatgpt.com)][code]  
 与力学相关的任务在实现准确的几何和物理表示方面常常面临独特挑战，尤其是对于非均匀结构。图神经网络（GNN）已成为应对这些挑战的有前景工具，能够通过巧妙地从具有不规则底层结构的图数据中学习。因此，近年来受GNN进步启发，复杂力学相关应用激增。尽管有这一过程，但目前仍缺乏系统性综述来探讨GNN近期在力学相关任务中的进展。为弥合这一空白，本文旨在深入概述GNN在力学相关领域的应用，同时识别关键挑战并概述未来潜在的研究方向。在这篇综述文章中，我们首先介绍了在力学相关应用中广泛应用的GNNs基础算法。我们简明扼要地阐述了其基本原理，以建立坚实的理解，为探索GNN在力学相关领域的应用提供基础。本文的范围旨在涵盖文献对固体力学、流体力学和跨学科力学相关领域的分类，全面总结图表示方法、GNN架构及其子领域内的进一步讨论。此外，还总结了与这些应用相关的开放数据和源代码，方便未来研究者。本文推动GNN与力学的跨学科整合，并为有兴趣将GNN应用于解决复杂力学相关任务的研究者提供指导。
 
-5 GNS: A generalizable Graph Neural Network-based simulator for particulate and fluid modeling[[paper](https://arxiv.org/abs/2211.10228?utm_source=chatgpt.com)][[code](https://github.com/geoelements/gns)]
+5 GNS: A generalizable Graph Neural Network-based simulator for particulate and fluid modeling[[paper](https://arxiv.org/abs/2211.10228?utm_source=chatgpt.com)][[code](https://github.com/geoelements/gns)]  
 我们开发了基于PyTorch的图网络模拟器（GNS），能够学习物理原理并预测颗粒和流体系统的流动行为。GNS将领域离散化，节点代表物质点集合，连接节点的链接代表粒子或粒子簇之间的局部相互作用。GNS通过图上的消息传递学习交互定律。GNS包含三个部分：（a）编码器，将粒子信息嵌入潜图，边是学习的函数;（b） 处理器，允许数据传播并计算跨步节点交互;以及（c）解码器，从图中提取相关动力学（例如粒子加速度）。我们引入了受物理启发的简单归纳偏差，例如惯性框架，使学习算法能够优先考虑一种解（恒定引力加速度），从而减少学习时间。GNS实现采用半隐式欧拉积分，根据预测加速度更新下一状态。基于轨迹数据训练的GNS可推广预测训练中未见的复杂边界条件下粒子运动学。训练好的模型能准确预测其相关材料点方法（MPM）模拟误差的5%范围内。预测速度比传统MPM快5000倍（MPM模拟为2.5小时，GNS颗粒流模拟为20秒）。GNS替代器在解决优化、控制、临界区域预测（即原位）以及逆型问题方面非常受欢迎。GNS代码可通过开源MIT许可证访问此 https URL。
 
-6 StructGNN: An Efficient Graph Neural Network Framework for Static Structural Analysis[paper][[code](https://github.com/CMMAi/StructGNN?utm_source=chatgpt.com)]
+6 StructGNN: An Efficient Graph Neural Network Framework for Static Structural Analysis[paper][[code](https://github.com/CMMAi/StructGNN?utm_source=chatgpt.com)]  
 在结构分析通过监督学习进行预测领域，神经网络被广泛应用。图神经网络（GNN）的最新进展扩展了其能力，使得利用图表示和GNN的消息传递机制，预测具有多样几何形状的结构。然而，GNN中的传统消息传递与结构性质不一致，导致计算效率低下，且推广到外推数据集的推广有限。为此，提出了一种新颖的结构图表示法，将伪节点作为每个故事中的刚性隔膜结合，并结合一个高效的GNN框架StructGNN。StructGNN 采用了根据结构故事数量身定制的自适应消息传递机制，使输入加载特征能够无缝地在结构图中传输。大量实验验证了该方法的有效性，预测位移、弯曲力矩和剪切力的准确率超过99%。StructGNN在非GNN模型上也表现出强烈的泛化性，在较高且未被看见的结构上平均准确率为96%。这些结果凸显了StructGNN作为可靠且计算高效工具的静态结构响应预测工具的潜力，有望应对结构分析中动态地震载荷相关的挑战。
 
-7 pytorch_geometric [paper][[code](https://github.com/pyg-team/pytorch_geometric?utm_source=chatgpt.com)]
+7 pytorch_geometric [paper][[code](https://github.com/pyg-team/pytorch_geometric?utm_source=chatgpt.com)]  
 提供最基础、广泛使用的 GNN 构建 /训练 /图数据处理 / mesh / point‑cloud 支持。非常适合作为基础库，从零开始构建结构‑动力学 /振动传播模型 (例如将 mesh → graph, 自定义 message‑passing / edge features / time‑stepping) 时使用。
 [paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code][paper][code]
