@@ -31,6 +31,10 @@
 然而，现有方法并不理想，因为它们仅仅利用了自信地伪标记的目标样本，同时忽视了特征空间的内在结构特征。此外，故障伪标签的可靠性总是以熵估计，其准确性可以通过更复杂的策略提升。为解决这些问题，我们计划探讨目标域中特征与伪标签之间的相关性，以维持特征辨别性与特征多样性之间的平衡。此外，我们还开发了一种基于投票的策略，结合数据增强，以更准确地估计故障伪标签的可靠性。该方法能够通过自监督训练和分布结构发现，分别利用可靠样本和不可靠样本进行诊断模型转移。
 
 8、Intelligent Ball Screw Fault Diagnosis Using Deep Learning Based Domain Adaptation and Transfer Learning[papers][[code](https://github.com/Fabian0597/MMD_PHMS)]
-
+Source-Free Domain Adaptation via Multimodal Space-Guided Alignment[[papers](https://www.sciencedirect.com/science/article/abs/pii/S0031320325014906)][[code](https://github.com/YunxiangBai0/MMGA/)]
+传统的UDA要求访问源域，在信息安全和隐私保护场景中使源域失效。相比之下，无源域适配（SFDA）涉及在源数据缺失时，将预训练的源模型转移到未标记的目标域。然而，基于自监督学习的早期方法由于缺乏源数据，难以找到高质量的域不变表示空间。为应对这一挑战，本研究提出利用视觉语言预训练（ViL）模型（如CLIP）的成功经验。为了更有效地整合ViL模型的领域通用性和源模型的任务特异性，我们引入了一种新颖的MultiModal Space-Guided A木质（MMGA）方法。具体来说，我们从多模态特征校准开始，以实现目标视觉域与多模态空间之间的粗略比对。然而，该 ViL 空间仍不是定义域不变量空间，因为它训练于大量样本。为了进一步实现向域不变量空间的细粒度比对，我们设计了两种方法：潜在类别一致性和预测一致性一致性对齐。这些方法使潜在类别分布和预测分布分别更接近ViL模型和适应源模型融合的伪监督。该策略纠正特征对齐到 ViL 空间的错误。大量实验表明，我们的MMGA方法显著优于现有最先进的替代方案。
 
 [papers][code]
+[papers][code]
+[papers][code]
+[papers][code][papers][code][papers][code][papers][code][papers][code][papers][code][papers][code][papers][code][papers][code][papers][code]
